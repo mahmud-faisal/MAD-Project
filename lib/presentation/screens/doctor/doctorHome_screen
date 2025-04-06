@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+
+class DoctorHomeScreen extends StatelessWidget {
+  const DoctorHomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Personal Doctor')),
+      drawer: const Drawer(),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => Navigator.pushNamed(context, '/disease_detail'),
+          child: const Text('COVID-19'),
+        ),
+      ),
+    );
+  }
+}
