@@ -43,7 +43,7 @@ my_flutter_project/<br/>
 │   │   │   │-- auth_provider.dart  
 │   │   │   │-- user_provider.dart  
 │   │   │   │-- post_provider.dart  
-│   │-- presentation/    # UI Layer <p style="color: green; font-weight: bold;">Frontend Codes goes here</p>
+│   │-- presentation/    # UI Layer ```<p style="color: green; font-weight: bold;">Frontend Codes goes here</p>```
 
 │   │   │-- screens/  
 │   │   │   │-- login_screen.dart  
