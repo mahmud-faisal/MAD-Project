@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-// import 'package:paitent_bio/presentation/screens/doctor/doctorHome_screen';'
-import '/presentation/screens/doctor/doctorHome_screen.dart';
-
+import 'routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
+  
     return MaterialApp(
-        title: 'Flutter App',
-        debugShowCheckedModeBanner: false,
-        home:DoctorHomeScreen()
-      );
-    
+      debugShowCheckedModeBanner: false,
+      // initialRoute: AppRoutes.selectionPage, // Start from selection screen
+      initialRoute:AppRoutes.testPage,
+      routes: AppRoutes.getRoutes(),
+    );
   }
 }

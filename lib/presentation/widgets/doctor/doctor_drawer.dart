@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class DoctorDrawer extends StatelessWidget {
   final String name;
-  final String designation;
-   const DoctorDrawer({required this.name,required this.designation, Key? key}) : super(key: key);
+  final String designation = "Doctor";
+   const DoctorDrawer({required this.name, Key? key}) : super(key: key);
 
 
 
@@ -56,7 +56,7 @@ child: ListView(
     ),
     ListTile(
       leading: Icon(Icons.info),
-      title: const Text('Update Personal Health data'),
+      title: const Text('Personal Info'),
       // onTap: () {
       //   // Update the state of the app.
       //   // ...

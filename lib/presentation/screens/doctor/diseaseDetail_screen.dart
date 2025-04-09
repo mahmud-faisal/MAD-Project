@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/doctor/doctor_drawer.dart';
-import '../../widgets/doctor/appBarDoctor.dart';
+import '../../widgets/general/appbar.dart';
 
 class DiseaseDetailScreen extends StatelessWidget {
   const DiseaseDetailScreen({super.key});
@@ -8,10 +8,9 @@ class DiseaseDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarDoctor(),
+      appBar: CustomAppBar(appBarTitle: 'Disease'),
       drawer:  DoctorDrawer(
-          name: 'Dr. John Doe',
-          designation: 'General Practitioner',
+          name: 'Dr. John Doe', 
         ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
