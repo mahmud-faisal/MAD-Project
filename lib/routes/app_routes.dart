@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paitent_bio/presentation/screens/doctor/dr_info_screen.dart';
+import 'package:paitent_bio/presentation/screens/doctor/patient_detail.dart';
+import 'package:paitent_bio/presentation/screens/doctor/patient_list.dart';
 import 'package:paitent_bio/presentation/screens/doctor/send_prescription.dart';
 // import '../presentation/screens/login_screen.dart';
 // import '../presentation/screens/home_screen.dart';
@@ -35,7 +37,7 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> getRoutes() {
     return {
-      testPage : (context) => DoctorSendPrescription(),
+      testPage : (context) => PatientList(),
 
       // selectionPage: (context) => SelectionScreen(),
       // loginPage: (context) => LoginScreen(),

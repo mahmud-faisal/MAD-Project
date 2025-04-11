@@ -46,14 +46,7 @@ child: ListView(
 
       
     ),
-    ListTile(
-      leading: Icon(Icons.notifications),
-      title: const Text('Notification'),
-      // onTap: () {
-      //   // Update the state of the app.
-      //   // ...
-      // },
-    ),
+  
     ListTile(
       leading: Icon(Icons.info),
       title: const Text('Personal Info'),
@@ -62,8 +55,16 @@ child: ListView(
       //   // ...
       // },
     ),
+     ListTile(
+      leading: Icon(Icons.qr_code),
+      title: const Text('Own QR Code'),
+      // onTap: () {
+      //   // Update the state of the app.
+      //   // ...
+      // },
+    ),
     ListTile(
-      leading: Icon(Icons.info),
+      leading: Icon(Icons.padding),
       title: const Text('Send Prescription'),
       // onTap: () {f
       //   // Update the state of the app.
@@ -71,8 +72,16 @@ child: ListView(
       // },
     ),
     ListTile(
-      leading: Icon(Icons.info),
+      leading: Icon(Icons.man),
       title: const Text('Patients'),
+      // onTap: () {
+      //   // Update the state of the app.
+      //   // ...
+      // },
+    ),
+    ListTile(
+      leading: Icon(Icons.image),
+      title: const Text('Image Scanner'),
       // onTap: () {
       //   // Update the state of the app.
       //   // ...
@@ -103,23 +112,7 @@ child: ListView(
       // },
     ),
     ListTile(
-      leading: Icon(Icons.info),
-      title: const Text('Own QR Code'),
-      // onTap: () {
-      //   // Update the state of the app.
-      //   // ...
-      // },
-    ),
-    ListTile(
-      leading: Icon(Icons.info),
-      title: const Text('Image Scanner'),
-      // onTap: () {
-      //   // Update the state of the app.
-      //   // ...
-      // },
-    ),
-    ListTile(
-      leading: Icon(Icons.info),
+      leading: Icon(Icons.battery_5_bar_outlined),
       title: const Text('Subscription Status'),
       // onTap: () {
       //   // Update the state of the app.
