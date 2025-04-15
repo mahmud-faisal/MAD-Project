@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "925102998239",
+    "project_id": "patient-bio-df24b",
+    "storage_bucket": "patient-bio-df24b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925102998239:android:952ccb56e3fa2302e99f6a",
+        "android_client_info": {
+          "package_name": "com.example.paitent_bio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAmoF8zuEhkRvstLAdV-rw9j3w08ftchw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

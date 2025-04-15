@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../widgets/doctor/doctor_drawer.dart';
+import '../../widgets/general/appbar.dart';
 
 class DoctorHomeScreen extends StatelessWidget {
   const DoctorHomeScreen({super.key});
@@ -6,8 +8,12 @@ class DoctorHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Personal Doctor')),
-      drawer: const Drawer(),
+      appBar: CustomAppBar(appBarTitle: 'Home'),
+      drawer:  DoctorDrawer(
+          name: 'Dr. John Doe',
+          
+        ),
+
       body: Center(
         child: ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, '/disease_detail'),
