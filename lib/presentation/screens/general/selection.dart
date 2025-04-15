@@ -28,6 +28,10 @@ class SelectionScreen extends StatelessWidget {
               onPressed: () => _navigateToLogin(context, 'Admin'),
               child: Text('Admin'),
             ),
+            ElevatedButton(
+              onPressed: () => _navigateToLogin(context, 'Lab Specialist'),
+              child: Text('Lab Specialist'),
+            ),
             // Add other user type buttons similarly...
           ],
         ),
