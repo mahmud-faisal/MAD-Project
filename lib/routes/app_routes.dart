@@ -8,6 +8,12 @@ import 'package:paitent_bio/presentation/screens/doctor/send_prescription.dart';
 import '../presentation/screens/auth/login_screen.dart';
 import '../presentation/screens/doctor/dr_qr.dart';
 import '../presentation/screens/general/selection.dart';
+import '../presentation/screens/ResearchLab/homePage.dart';
+import '../presentation/screens/ResearchLab/lab_info_page.dart';
+import '../presentation/screens/ResearchLab/side_effects.dart';
+import '../presentation/screens/ResearchLab/select_disease_page.dart';
+
+
 
 class AppRoutes {
   // Test
@@ -24,9 +30,19 @@ class AppRoutes {
   static const String doctorPatientList = '/doctor_patient_list';
   static const String doctorSendPrescription = '/doctor_send_prescription';
   static const String doctorPatientDetail = '/doctor_patient_detail';
+  static const String researchLabHomePage = '/researchLabHomePage';
+  static const String personalInfoPage = '/personal_info';
+  static const String sideEffects = '/side_effects';
+  static const String selectDiseasePage = '/select_disease';
+
+
 
   static Map<String, WidgetBuilder> getRoutes() {
     return {
+      researchLabHomePage: (context) => ResearchLabHomePage(),
+      personalInfoPage: (context) => PersonalInfoPage(),
+      sideEffects: (context) => SideEffects(),
+      selectDiseasePage: (context) => SelectDiseasePage(),
       testPage: (context) => PatientList(), // Remove this in production
 
       selectionPage: (context) => SelectionScreen(),
