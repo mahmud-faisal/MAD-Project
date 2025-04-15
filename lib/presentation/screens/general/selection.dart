@@ -29,10 +29,9 @@ class SelectionScreen extends StatelessWidget {
               child: Text('Admin'),
             ),
             ElevatedButton(
-              onPressed: () => _navigateToLogin(context, 'Lab Specialist'),
+              onPressed: () => _navigateToResearch(context, 'Lab Specialist'),
               child: Text('Lab Specialist'),
             ),
-            // Add other user type buttons similarly...
           ],
         ),
       ),
@@ -43,6 +42,14 @@ class SelectionScreen extends StatelessWidget {
     Navigator.pushNamed(
       context,
       AppRoutes.loginPage,
+      arguments: userType,
+    );
+  }
+
+  void _navigateToResearch(BuildContext context, String userType) {
+    Navigator.pushNamed(
+      context,
+      AppRoutes.researchLabHomePage,
       arguments: userType,
     );
   }

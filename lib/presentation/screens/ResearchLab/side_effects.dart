@@ -1,169 +1,124 @@
 import 'package:flutter/material.dart';
 
-class MedicineInfoPage extends StatefulWidget {
-  @override
-  _MedicineInfoPageState createState() => _MedicineInfoPageState();
-}
-
-class _MedicineInfoPageState extends State<MedicineInfoPage> {
-  int? expandedIndex;
-
-  final List<Map<String, dynamic>> medicines = [
+class SideEffects extends StatelessWidget {
+  final List<Map<String, String>> medicines = [
     {
       'name': 'Paracetamol',
-      'sideEffects': 'Nausea, rash, liver issues (rare)',
-      'alternatives': ['Ibuprofen', 'Aspirin'],
-    },
-    {
-      'name': 'Oseltamivir',
-      'sideEffects': 'Vomiting, headache, nausea',
-      'alternatives': ['Zanamivir'],
-    },
-    {
-      'name': 'Remdesivir',
-      'sideEffects': 'Liver damage, chills, nausea',
-      'alternatives': ['Molnupiravir'],
+      'sideEffect': 'Liver damage (in high doses), nausea',
+      'alternative': 'Ibuprofen, Aspirin'
     },
     {
       'name': 'Ibuprofen',
-      'sideEffects': 'Stomach upset, ulcers, kidney issues',
-      'alternatives': ['Naproxen', 'Paracetamol'],
-    },
-    {
-      'name': 'Dexamethasone',
-      'sideEffects': 'Insomnia, mood swings, weight gain',
-      'alternatives': ['Prednisone', 'Methylprednisolone'],
-    },
-    {
-      'name': 'Artemether',
-      'sideEffects': 'Dizziness, fever, weakness',
-      'alternatives': ['Quinine', 'Chloroquine'],
-    },
-    {
-      'name': 'Lumefantrine',
-      'sideEffects': 'Fatigue, headache, dizziness',
-      'alternatives': ['Artesunate'],
-    },
-    {
-      'name': 'Zanamivir',
-      'sideEffects': 'Cough, sinus pain, throat irritation',
-      'alternatives': ['Oseltamivir'],
-    },
-    {
-      'name': 'Molnupiravir',
-      'sideEffects': 'Diarrhea, dizziness, rash',
-      'alternatives': ['Remdesivir'],
-    },
-    {
-      'name': 'Prednisone',
-      'sideEffects': 'Weight gain, mood change, swelling',
-      'alternatives': ['Hydrocortisone'],
-    },
-    {
-      'name': 'Chloroquine',
-      'sideEffects': 'Blurred vision, itching, nausea',
-      'alternatives': ['Hydroxychloroquine'],
-    },
-    {
-      'name': 'Naproxen',
-      'sideEffects': 'Heartburn, drowsiness, upset stomach',
-      'alternatives': ['Ibuprofen'],
-    },
-    {
-      'name': 'Aspirin',
-      'sideEffects': 'Bleeding, stomach ulcers, nausea',
-      'alternatives': ['Paracetamol'],
-    },
-    {
-      'name': 'Hydrocortisone',
-      'sideEffects': 'Irritation, dryness, redness',
-      'alternatives': ['Prednisone'],
-    },
-    {
-      'name': 'Methylprednisolone',
-      'sideEffects': 'Bloating, acne, increased appetite',
-      'alternatives': ['Dexamethasone'],
-    },
-    {
-      'name': 'Chemotherapy',
-      'sideEffects': 'Hair loss, fatigue, infection risk',
-      'alternatives': ['Radiation therapy'],
-    },
-    {
-      'name': 'Radiation therapy',
-      'sideEffects': 'Skin changes, fatigue, nausea',
-      'alternatives': ['Chemotherapy'],
-    },
-    {
-      'name': 'Acetaminophen',
-      'sideEffects': 'Liver toxicity in overdose',
-      'alternatives': ['Ibuprofen'],
+      'sideEffect': 'Stomach ulcers, kidney issues',
+      'alternative': 'Paracetamol, Naproxen'
     },
     {
       'name': 'Amoxicillin',
-      'sideEffects': 'Diarrhea, rash, allergic reaction',
-      'alternatives': ['Azithromycin'],
+      'sideEffect': 'Allergic reaction, diarrhea',
+      'alternative': 'Azithromycin, Doxycycline'
+    },
+    {
+      'name': 'Cetirizine',
+      'sideEffect': 'Drowsiness, dry mouth',
+      'alternative': 'Loratadine, Fexofenadine'
+    },
+    {
+      'name': 'Metformin',
+      'sideEffect': 'Stomach upset, metallic taste',
+      'alternative': 'Glipizide, Sitagliptin'
+    },
+    {
+      'name': 'Omeprazole',
+      'sideEffect': 'Headache, abdominal pain',
+      'alternative': 'Pantoprazole, Ranitidine'
+    },
+    {
+      'name': 'Lisinopril',
+      'sideEffect': 'Cough, dizziness',
+      'alternative': 'Losartan, Enalapril'
+    },
+    {
+      'name': 'Amlodipine',
+      'sideEffect': 'Swelling, fatigue',
+      'alternative': 'Nifedipine, Verapamil'
+    },
+    {
+      'name': 'Atorvastatin',
+      'sideEffect': 'Muscle pain, liver enzyme changes',
+      'alternative': 'Rosuvastatin, Simvastatin'
     },
     {
       'name': 'Azithromycin',
-      'sideEffects': 'Nausea, abdominal pain, headache',
-      'alternatives': ['Clarithromycin'],
+      'sideEffect': 'Nausea, vomiting',
+      'alternative': 'Doxycycline, Clarithromycin'
     },
   ];
+
+  void _showDetails(BuildContext context, Map<String, String> medicine) {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        title: Text(medicine['name']!, style: const TextStyle(fontWeight: FontWeight.bold)),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Side Effects:', style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(medicine['sideEffect'] ?? ''),
+            const SizedBox(height: 10),
+            const Text('Alternatives:', style: TextStyle(fontWeight: FontWeight.bold)),
+            Text(medicine['alternative'] ?? ''),
+          ],
+        ),
+        actions: [
+          TextButton(
+            child: const Text('Close', style: TextStyle(color: Colors.teal)),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: Text('Medicine Info'),
+        title: const Text(
+          'Medicines & Side Effects',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        elevation: 0,
         backgroundColor: Colors.teal,
       ),
-      body: ListView.builder(
-        itemCount: medicines.length,
-        itemBuilder: (context, index) {
-          final medicine = medicines[index];
-          final isExpanded = expandedIndex == index;
-
-          return Card(
-            margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            elevation: 4,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: InkWell(
-              onTap: () {
-                setState(() {
-                  expandedIndex = isExpanded ? null : index;
-                });
-              },
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      medicine['name'],
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    if (isExpanded) ...[
-                      SizedBox(height: 12),
-                      Text(
-                        "Side Effects:",
-                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.redAccent),
-                      ),
-                      Text(medicine['sideEffects']),
-                      SizedBox(height: 10),
-                      Text(
-                        "Alternatives:",
-                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green),
-                      ),
-                      for (var alt in medicine['alternatives'])
-                        Text("- $alt"),
-                    ],
-                  ],
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.separated(
+          itemCount: medicines.length,
+          separatorBuilder: (context, index) => const SizedBox(height: 12),
+          itemBuilder: (context, index) {
+            final medicine = medicines[index];
+            return Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-            ),
-          );
-        },
+              elevation: 4,
+              shadowColor: Colors.teal.withOpacity(0.3),
+              child: ListTile(
+                leading: const Icon(Icons.medication, color: Colors.teal),
+                title: Text(
+                  medicine['name']!,
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+                trailing: const Icon(Icons.info_outline),
+                onTap: () => _showDetails(context, medicine),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
