@@ -30,7 +30,10 @@ class AppRoutes {
       testPage: (context) => PatientList(), // Remove this in production
 
       selectionPage: (context) => SelectionScreen(),
-      // loginPage: (context) => LoginScreen(),
+      loginPage: (context) {
+        final userType = ModalRoute.of(context)!.settings.arguments as String;
+        return LoginScreen(userType: userType);
+      },
       
       // Doctor routes
       doctorHome: (context) => DoctorHomeScreen(),
