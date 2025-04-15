@@ -13,8 +13,20 @@ class SelectionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
+              onPressed: () => _navigateToLogin(context, 'Patient'),
+              child: Text('Patient'),
+            ),
+            ElevatedButton(
               onPressed: () => _navigateToLogin(context, 'Doctor'),
               child: Text('Doctor'),
+            ),
+            ElevatedButton(
+              onPressed: () => _navigateToLogin(context, 'Pathologist'),
+              child: Text('Pathologist'),
+            ),
+            ElevatedButton(
+              onPressed: () => _navigateToLogin(context, 'Admin'),
+              child: Text('Admin'),
             ),
             // Add other user type buttons similarly...
           ],
