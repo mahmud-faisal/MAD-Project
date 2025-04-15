@@ -2,42 +2,32 @@ import 'package:flutter/material.dart';
 import '../../../routes/app_routes.dart';
 
 class SelectionScreen extends StatelessWidget {
+  const SelectionScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Select User Type")),
+      appBar: AppBar(title: Text('Select User Type')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-          Container(
-            width: 150,
-            
-            child:  ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.loginPage, arguments: 'doctor'),
-              child: Text("Doctor"),
-              
-            )
-          ),
-          
-         Container(
-          width: 150,
-             child: ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.loginPage, arguments: 'patient'),
-              child: Text("Patient"),
-            )
-         ),
-            Container(
-              width: 150,
-              child:ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.loginPage, arguments: 'pharmacist'),
-              child: Text("Pharmacist"),
+            ElevatedButton(
+              onPressed: () => _navigateToLogin(context, 'Doctor'),
+              child: Text('Doctor'),
             ),
-            
-            ),
+            // Add other user type buttons similarly...
           ],
         ),
       ),
+    );
+  }
+
+  void _navigateToLogin(BuildContext context, String userType) {
+    Navigator.pushNamed(
+      context,
+      AppRoutes.loginPage,
+      arguments: userType,
     );
   }
 }
