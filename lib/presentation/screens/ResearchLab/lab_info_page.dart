@@ -5,7 +5,7 @@ class PersonalInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Info'),
+        title: const Text('Lab Information'),
         backgroundColor: Colors.teal,
       ),
       body: Padding(
